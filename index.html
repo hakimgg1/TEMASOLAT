@@ -14,19 +14,11 @@
             background-size: cover;
             background-position: center;
         }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-in-out;
+        details {
+            cursor: pointer;
         }
-        .accordion-content.active {
-            max-height: 500px;
-        }
-        .accordion-btn {
-            transition: all 0.3s ease-in-out;
-        }
-        .accordion-btn.active::after {
-            transform: rotate(180deg);
+        details summary:hover {
+            background-color: #f0fdf4;
         }
     </style>
 </head>
@@ -45,12 +37,11 @@
 
     <!-- Navigation -->
     <nav class="bg-white shadow sticky top-0 z-10">
-        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-around text-sm md:text-base font-semibold">
-            <a href="#pengenalan" class="hover:text-green-600">Pengenalan</a>
-            <a href="#syarat" class="hover:text-green-600">Syarat</a>
-            <a href="#niat" class="hover:text-green-600">Niat</a>
-            <a href="#isu-semasa" class="hover:text-green-600">Isu Semasa</a>
-            <a href="#faq" class="hover:text-green-600">FAQ</a>
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-around text-sm md:text-base font-semibold overflow-x-auto">
+            <a href="#pengenalan" class="hover:text-green-600 whitespace-nowrap">Pengenalan</a>
+            <a href="#syarat" class="hover:text-green-600 whitespace-nowrap">Syarat</a>
+            <a href="#niat" class="hover:text-green-600 whitespace-nowrap">Niat</a>
+            <a href="#isu-semasa" class="hover:text-green-600 whitespace-nowrap">Isu Semasa</a>
         </div>
     </nav>
 
@@ -69,8 +60,7 @@
                 </p>
             </div>
             <div class="rounded-2xl overflow-hidden shadow-xl">
-                <!-- Gambar Masjid Interior -->
-                <img src="assets/mosque.jpg" 
+                <img src="https://images.unsplash.com/photo-1602088113235-229c19758e9f?q=80&w=1000&auto=format&fit=crop" 
                      alt="Masjid Interior" class="w-full h-auto object-cover">
             </div>
         </section>
@@ -86,19 +76,19 @@
                     <h2 class="text-2xl font-bold text-green-700 mb-6">Syarat Sah Musafir</h2>
                     <ul class="space-y-4">
                         <li class="flex items-start">
-                            <span class="bg-green-100 text-green-700 rounded-full px-3 py-1 text-sm font-bold mr-3">1</span>
+                            <span class="bg-green-100 text-green-700 rounded-full px-3 py-1 text-sm font-bold mr-3 flex-shrink-0">1</span>
                             <p>Perjalanan melebihi <strong>2 Marhalah (±81km - 85km)</strong>.</p>
                         </li>
                         <li class="flex items-start">
-                            <span class="bg-green-100 text-green-700 rounded-full px-3 py-1 text-sm font-bold mr-3">2</span>
+                            <span class="bg-green-100 text-green-700 rounded-full px-3 py-1 text-sm font-bold mr-3 flex-shrink-0">2</span>
                             <p>Tujuan perjalanan mestilah <strong>bukan untuk maksiat</strong>.</p>
                         </li>
                         <li class="flex items-start">
-                            <span class="bg-green-100 text-green-700 rounded-full px-3 py-1 text-sm font-bold mr-3">3</span>
+                            <span class="bg-green-100 text-green-700 rounded-full px-3 py-1 text-sm font-bold mr-3 flex-shrink-0">3</span>
                             <p>Telah keluar dari kawasan kariah/bandar tempat tinggal.</p>
                         </li>
                         <li class="flex items-start">
-                            <span class="bg-green-100 text-green-700 rounded-full px-3 py-1 text-sm font-bold mr-3">4</span>
+                            <span class="bg-green-100 text-green-700 rounded-full px-3 py-1 text-sm font-bold mr-3 flex-shrink-0">4</span>
                             <p>Tidak berniat menetap lebih dari <strong>3 hari</strong> (tidak termasuk hari pergi & balik).</p>
                         </li>
                     </ul>
@@ -129,75 +119,67 @@
 
         <!-- Section Isu Semasa -->
         <section id="isu-semasa" class="scroll-mt-24">
-            <h2 class="text-3xl font-bold text-center mb-10 border-b-4 border-green-500 inline-block w-full pb-4">Isu Semasa</h2>
+            <h2 class="text-3xl font-bold mb-10 text-center">Isu Semasa</h2>
             <div class="space-y-4">
                 
-                <!-- Isu Semasa 1 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-                    <button class="accordion-btn w-full p-6 flex justify-between items-center hover:bg-green-50 transition" onclick="toggleAccordion(this)">
+                <!-- Isu 1 -->
+                <details class="bg-white rounded-xl shadow-md overflow-hidden group">
+                    <summary class="p-6 flex justify-between items-center hover:bg-green-50 cursor-pointer select-none">
                         <div class="text-left">
-                            <h3 class="text-lg font-bold text-green-700">Solat Jamak Semasa Perjalanan Udara</h3>
+                            <h3 class="text-lg font-bold text-green-700">🛫 Solat Jamak Semasa Perjalanan Udara</h3>
                             <p class="text-sm text-gray-500 mt-1">Bagaimana cara menunaikan solat jamak di dalam pesawat?</p>
                         </div>
-                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                        </svg>
-                    </button>
-                    <div class="accordion-content px-6 pb-6 bg-gray-50">
+                        <span class="text-2xl group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="px-6 pb-6 bg-gray-50 border-t-2 border-green-100">
                         <p class="text-gray-700 leading-relaxed">
                             Solat semasa perjalanan udara boleh dijamakkan. Penumpang boleh menunaikan solat dengan duduk di kerusi mengikut arahan pilot. Jika memungkinkan, carilah tempat yang tenang atau gunakan ruang khusus dalam pesawat. Niat jamak tetap perlu dibuat dengan jelas.
                         </p>
                     </div>
-                </div>
+                </details>
 
-                <!-- Isu Semasa 2 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-                    <button class="accordion-btn w-full p-6 flex justify-between items-center hover:bg-green-50 transition" onclick="toggleAccordion(this)">
+                <!-- Isu 2 -->
+                <details class="bg-white rounded-xl shadow-md overflow-hidden group">
+                    <summary class="p-6 flex justify-between items-center hover:bg-green-50 cursor-pointer select-none">
                         <div class="text-left">
-                            <h3 class="text-lg font-bold text-green-700">Solat Jamak untuk Orang Sakit</h3>
+                            <h3 class="text-lg font-bold text-green-700">🏥 Solat Jamak untuk Orang Sakit</h3>
                             <p class="text-sm text-gray-500 mt-1">Adakah orang sakit boleh menunaikan solat jamak?</p>
                         </div>
-                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                        </svg>
-                    </button>
-                    <div class="accordion-content px-6 pb-6 bg-gray-50">
+                        <span class="text-2xl group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="px-6 pb-6 bg-gray-50 border-t-2 border-green-100">
                         <p class="text-gray-700 leading-relaxed">
                             Ya, orang yang sedang sakit dan kesukaran melakukan perjalanan boleh menunaikan solat jamak. Ini termasuk dalam pemberian keringanan (rukhsah) Islam. Walau bagaimanapun, orang sakit yang tinggal di rumah tidak dikategorikan sebagai musafir kecuali mereka melakukan perjalanan yang memenuhi syarat jamak.
                         </p>
                     </div>
-                </div>
+                </details>
 
-                <!-- Isu Semasa 3 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-                    <button class="accordion-btn w-full p-6 flex justify-between items-center hover:bg-green-50 transition" onclick="toggleAccordion(this)">
+                <!-- Isu 3 -->
+                <details class="bg-white rounded-xl shadow-md overflow-hidden group">
+                    <summary class="p-6 flex justify-between items-center hover:bg-green-50 cursor-pointer select-none">
                         <div class="text-left">
-                            <h3 class="text-lg font-bold text-green-700">Hukum Solat Jamak untuk Perkara Darurat</h3>
+                            <h3 class="text-lg font-bold text-green-700">🚨 Hukum Solat Jamak untuk Perkara Darurat</h3>
                             <p class="text-sm text-gray-500 mt-1">Bolehkah menunaikan jamak jika ada perkara mendesak?</p>
                         </div>
-                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                        </svg>
-                    </button>
-                    <div class="accordion-content px-6 pb-6 bg-gray-50">
+                        <span class="text-2xl group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="px-6 pb-6 bg-gray-50 border-t-2 border-green-100">
                         <p class="text-gray-700 leading-relaxed">
                             Dalam situasi darurat dan mendesak, seperti kejadian bencana atau keadaan yang tidak memungkinkan, solat jamak boleh dilakukan walaupun tidak memenuhi syarat musafir. Ini adalah bagian dari kebijaksanaan Syariah dalam memudahkan hambanya. Akan tetapi, keadaan ini hendaklah benar-benar mendesak.
                         </p>
                     </div>
-                </div>
+                </details>
 
-                <!-- Isu Semasa 4 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-                    <button class="accordion-btn w-full p-6 flex justify-between items-center hover:bg-green-50 transition" onclick="toggleAccordion(this)">
+                <!-- Isu 4 -->
+                <details class="bg-white rounded-xl shadow-md overflow-hidden group">
+                    <summary class="p-6 flex justify-between items-center hover:bg-green-50 cursor-pointer select-none">
                         <div class="text-left">
-                            <h3 class="text-lg font-bold text-green-700">Apakah Perbezaan Jamak Taqdim dan Takhir</h3>
+                            <h3 class="text-lg font-bold text-green-700">⚖️ Perbezaan Jamak Taqdim dan Takhir</h3>
                             <p class="text-sm text-gray-500 mt-1">Apa bedanya antara dua jenis jamak ini?</p>
                         </div>
-                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                        </svg>
-                    </button>
-                    <div class="accordion-content px-6 pb-6 bg-gray-50">
+                        <span class="text-2xl group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="px-6 pb-6 bg-gray-50 border-t-2 border-green-100">
                         <p class="text-gray-700 leading-relaxed mb-3">
                             <strong>Jamak Taqdim:</strong> Mengerjakan solat kedua (contohnya Asar) lebih awal di dalam waktu solat pertama (Zohor). Ini dipilih apabila dirasakan perjalanan akan disambung selepas waktu solat pertama.
                         </p>
@@ -205,25 +187,23 @@
                             <strong>Jamak Takhir:</strong> Mengerjakan solat pertama (contohnya Zohor) lebih lambat di dalam waktu solat kedua (Asar). Ini dipilih apabila perjalanan baru bermula selepas waktu solat pertama.
                         </p>
                     </div>
-                </div>
+                </details>
 
-                <!-- Isu Semasa 5 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
-                    <button class="accordion-btn w-full p-6 flex justify-between items-center hover:bg-green-50 transition" onclick="toggleAccordion(this)">
+                <!-- Isu 5 -->
+                <details class="bg-white rounded-xl shadow-md overflow-hidden group">
+                    <summary class="p-6 flex justify-between items-center hover:bg-green-50 cursor-pointer select-none">
                         <div class="text-left">
-                            <h3 class="text-lg font-bold text-green-700">Solat Jamak dan Panduan WHO Semasa Wabak</h3>
-                            <p class="text-sm text-gray-500 mt-1">Bagaimana menunaikan jamak dalam situasi wabak penyakit?</p>
+                            <h3 class="text-lg font-bold text-green-700">🦠 Solat Jamak Semasa Wabak Penyakit</h3>
+                            <p class="text-sm text-gray-500 mt-1">Bagaimana menunaikan jamak dalam situasi wabak?</p>
                         </div>
-                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                        </svg>
-                    </button>
-                    <div class="accordion-content px-6 pb-6 bg-gray-50">
+                        <span class="text-2xl group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div class="px-6 pb-6 bg-gray-50 border-t-2 border-green-100">
                         <p class="text-gray-700 leading-relaxed">
                             Semasa wabak penyakit seperti COVID-19, umat Islam boleh menunaikan solat jamak di rumah mengikuti panduan kesihatan yang ditetapkan. Ini adalah keringanan yang diberikan untuk memastikan kesehatan dan keselamatan. Solat di rumah dengan jamak adalah lebih baik daripada mengambil risiko kesihatan yang tidak perlu. Niat jamak perlu dibuat dengan jelas dan tulus.
                         </p>
                     </div>
-                </div>
+                </details>
 
             </div>
         </section>
@@ -239,25 +219,6 @@
             </p>
         </div>
     </footer>
-
-    <script>
-        function toggleAccordion(button) {
-            const content = button.nextElementSibling;
-            const isActive = content.classList.contains('active');
-            
-            // Close all other accordions
-            document.querySelectorAll('.accordion-content').forEach(item => {
-                item.classList.remove('active');
-                item.previousElementSibling.classList.remove('active');
-            });
-            
-            // Toggle current accordion
-            if (!isActive) {
-                content.classList.add('active');
-                button.classList.add('active');
-            }
-        }
-    </script>
 
 </body>
 </html>
